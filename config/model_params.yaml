@@ -1,0 +1,14 @@
+training:
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.0005
+  sequence_length: 128
+  validation_split: 0.2
+
+architecture:
+  input_channels: 1
+  lstm_hidden: 128
+  lstm_layers: 2
+  bidirectional: true
+  cnn_filters: [32, 64]
+  dropout: 0.3

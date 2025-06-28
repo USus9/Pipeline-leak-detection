@@ -1,0 +1,20 @@
+threshold_optimization:
+  method: "isolation_forest"           # isolation_forest | one_class_svm | statistical
+  window_size: 1000                     # Rolling residual history size
+  target_false_positive_rate: 0.05      # Desired false-positive rate (5%)
+  initial_threshold: 0.5                # Default threshold until model fits
+  min_samples: 50                       # Minimum residuals before training
+  retrain_interval: 200                 # How often to retrain ML threshold model
+
+  isolation_forest:
+    contamination: 0.05
+    n_estimators: 200
+
+  one_class_svm:
+    nu: 0.05
+    kernel: "rbf"
+
+  statistical:
+    n_sigma: 3                          # 3-sigma rule fallback
+
+persistence: 5                          # consecutive breaches required
